@@ -8,19 +8,29 @@
 
 import UIKit
 
-class EthereumCalculatorViewController: UIViewController {
+class EthereumCalculatorViewController: UIViewController, UITextFieldDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func calculatePrice() {
+        EthPriceController.fetchUSDollarAmount(completion: { (wallet) in
+            guard let usd = wallet else { NSLog("wallet in fetchUSDDollarAmount was nil"); return }
+            DispatchQueue.main.async {
+                let total = Double(usd.ethUSDAAmount)! * Double(self.etherBalanceTextField.text!)! // Fix Bangs
+                self.balanceLabel.text = String(total)
+            }
+        })
+
+    }
+
+    // MARK: - IBActions
+    
+    @IBAction func calculateButtonTapped(_ sender: Any) {
+        calculatePrice()
     }
     
     
-
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   
-    }
+    //MARK: - IBOutlets
     
+    @IBOutlet weak var balanceLabel: UITextField!
+    @IBOutlet weak var etherBalanceTextField: UITextField!
 
 }

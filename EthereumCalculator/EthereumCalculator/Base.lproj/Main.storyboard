@@ -28,12 +28,18 @@
                                     <constraint firstAttribute="height" constant="50" id="wlu-Uk-kSy"/>
                                 </constraints>
                                 <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="dbx-N4-8UW" eventType="touchUpInside" id="aQ3-lj-R1c"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ethereum Balance" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyd-iP-Hgf">
                                 <rect key="frame" x="16" y="333" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dbx-N4-8UW" id="AZh-fj-2GM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ethereum Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpj-J8-ziE">
                                 <rect key="frame" x="115" y="304" width="145" height="21"/>
@@ -55,6 +61,10 @@
                             <constraint firstItem="zpj-J8-ziE" firstAttribute="top" secondItem="DsD-Uo-3x2" secondAttribute="bottom" constant="284" id="xb4-6o-nQJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="balanceLabel" destination="iyd-iP-Hgf" id="uqz-Pk-gdS"/>
+                        <outlet property="etherBalanceTextField" destination="iyd-iP-Hgf" id="1Vj-2G-mPe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fq-84-4d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

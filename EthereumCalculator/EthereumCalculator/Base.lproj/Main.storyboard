@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dbx-N4-8UW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Ethereum Calculator View Controller-->
+        <scene sceneID="c36-Eo-OXL">
+            <objects>
+                <viewController id="dbx-N4-8UW" customClass="EthereumCalculatorViewController" customModule="EthereumCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DsD-Uo-3x2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Df9-4b-4Qm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a0d-rX-L5e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3q-EB-rZd">
+                                <rect key="frame" x="16" y="617" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wlu-Uk-kSy"/>
+                                </constraints>
+                                <state key="normal" title="Calculate"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ethereum Balance" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyd-iP-Hgf">
+                                <rect key="frame" x="16" y="333" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ethereum Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpj-J8-ziE">
+                                <rect key="frame" x="115" y="304" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iyd-iP-Hgf" firstAttribute="centerX" secondItem="a0d-rX-L5e" secondAttribute="centerX" id="03h-W2-Smh"/>
+                            <constraint firstItem="iyd-iP-Hgf" firstAttribute="leading" secondItem="a0d-rX-L5e" secondAttribute="leadingMargin" id="3q3-5L-x3V"/>
+                            <constraint firstItem="iyd-iP-Hgf" firstAttribute="top" secondItem="zpj-J8-ziE" secondAttribute="bottom" constant="8" symbolic="YES" id="6HE-j2-62g"/>
+                            <constraint firstItem="f3q-EB-rZd" firstAttribute="leading" secondItem="a0d-rX-L5e" secondAttribute="leadingMargin" id="T6t-Xr-rfA"/>
+                            <constraint firstItem="zpj-J8-ziE" firstAttribute="centerX" secondItem="iyd-iP-Hgf" secondAttribute="centerX" id="TIP-aT-5id"/>
+                            <constraint firstItem="Df9-4b-4Qm" firstAttribute="top" secondItem="f3q-EB-rZd" secondAttribute="bottom" id="dwn-yW-dAe"/>
+                            <constraint firstItem="f3q-EB-rZd" firstAttribute="trailing" secondItem="a0d-rX-L5e" secondAttribute="trailingMargin" id="eDC-cC-deF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iyd-iP-Hgf" secondAttribute="trailing" id="gWv-a0-uqc"/>
+                            <constraint firstItem="zpj-J8-ziE" firstAttribute="top" secondItem="DsD-Uo-3x2" secondAttribute="bottom" constant="284" id="xb4-6o-nQJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fq-84-4d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77.599999999999994" y="176.76161919040482"/>
+        </scene>
+    </scenes>
 </document>

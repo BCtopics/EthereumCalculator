@@ -19,6 +19,15 @@ class EthereumCalculatorViewController: UIViewController, UITextFieldDelegate {
                 guard let b = Double(balanceEntered) else { return }
                 let total = a * b
                 self.balanceLabel.text = String("$\(total)")
+                self.temp = String("$\(total)")
+                
+                let alert = UIAlertController(title: "\(self.temp)", message: nil, preferredStyle: .alert)
+                let okAlert = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okAlert)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                // Alert controller works when I put it into the function, but not when I have it run in the calculateButtonTapped. Fix this later.
             }
         })
 
@@ -35,5 +44,9 @@ class EthereumCalculatorViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var balanceLabel: UITextField!
     @IBOutlet weak var etherBalanceTextField: UITextField!
+    
+    //MARK: - Internal Properties
+    
+    var temp = "Nothing Yet :("
 
 }

@@ -14,8 +14,11 @@ class EthereumCalculatorViewController: UIViewController, UITextFieldDelegate {
         EthPriceController.fetchUSDollarAmount(completion: { (wallet) in
             guard let usd = wallet else { NSLog("wallet in fetchUSDDollarAmount was nil"); return }
             DispatchQueue.main.async {
-                let total = Double(usd.ethUSDAAmount)! * Double(self.etherBalanceTextField.text!)! // Fix Bangs
-                self.balanceLabel.text = String(total)
+                guard let a = Double(usd.ethUSDAAmount) else { return }
+                guard let balanceEntered = self.etherBalanceTextField.text else { return }
+                guard let b = Double(balanceEntered) else { return }
+                let total = a * b
+                self.balanceLabel.text = String("$\(total)")
             }
         })
 

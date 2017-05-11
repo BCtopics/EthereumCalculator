@@ -13,6 +13,8 @@ class EthereumCalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
 
     // MARK: - Navigation
 
